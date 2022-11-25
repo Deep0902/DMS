@@ -1,0 +1,72 @@
+<body class="container jumbotron">
+
+    <h2>Add Component</h2>
+    <hr>
+    <form (ngSubmit)="saveDept(deptdata)" #deptForm="ngForm">
+        <table>
+            <tr>
+                <td>
+                    <label for="id">Enter ID: </label>
+                </td>
+                <td>
+                    <input type="number" id="id" name="id" readonly [(ngModel)]="deptdata.id" #id="ngModel">
+                </td>
+
+                <td>
+                    <div *ngIf="id.invalid && (id.dirty || id.touched)" style="background-color:#dc143c; color: white;">
+                        <div *ngIf="id.errors?.['required']">
+                            &nbsp;&nbsp;Id cannot be blank
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+            <tr></tr><br>
+
+            <tr>
+                <td>
+                    <label for="name">Enter Department Name: </label>
+                </td>
+                <td>
+                    <input type="text" id="name" name="name" required [(ngModel)]="deptdata.name" #name="ngModel">
+                </td>
+
+                <td>
+                    <div *ngIf="name.invalid && (name.dirty || name.touched)"
+                        style="background-color:#dc143c; color: white;">
+                        <div *ngIf="name.errors?.['required']">
+                            &nbsp;&nbsp;Name cannot be blank
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+            <tr></tr><br>
+
+            <tr>
+                <td>
+                    <label for="loc">Enter Department Location: </label>
+                </td>
+                <td>
+                    <input type="text" id="loc" name="loc" required [(ngModel)]="deptdata.loc" #loc="ngModel">
+                </td>
+
+                <td>
+                    <div *ngIf="loc.invalid && (loc.dirty || loc.touched)"
+                        style="background-color:#dc143c; color: white;">
+                        <div *ngIf="loc.errors?.['required']">
+                            &nbsp;&nbsp;Location cannot be blank
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+        </table><br>
+
+        <p>
+            <input type="submit" value="Save" class="btn btn-success" [disabled]="! deptForm.valid">
+        </p>
+    </form>
+    <br><br>
+    <a [routerLink]="['/list']">Back to List</a>
+</body>

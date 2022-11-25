@@ -1,0 +1,24 @@
+<body class="container jumbotron">
+
+    <h2>Department Information</h2>
+    <hr>
+    <table class="table table-border table-striped">
+        <thead>
+            <tr>
+                <td><b>Name</b></td>
+                <td><b>Count</b></td>
+                <td><b>Salary</b></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of deptdata">
+                <td>{{data.name}}</td>
+                <td>{{data.count}}</td>
+                <td>{{data.totalSalary}}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <br><br>
+    <a [routerLink]="['/list']">Back to List</a>
+</body>

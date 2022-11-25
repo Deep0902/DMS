@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="jumbotron">
+        <h2>Find Component</h2><br><br>
+        <h3>Details of Department: {{deptdata.name}}</h3>
+        <div style="background-color: #82ccdd;">
+            Id: {{deptdata.id}}<br>
+            Location: {{deptdata.loc}}
+        </div>
+        <br><br>
+        <table class="table">
+            <thead>
+                <tr>
+                    <td><b>Id</b></td>
+                    <td><b>Name</b></td>
+                    <td><b>Location</b></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{deptdata.id}}</td>                
+                    <td>{{deptdata.name}}</td>                
+                    <td>{{deptdata.loc}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <a [routerLink]="['/list']">Back to List</a>
+    </div>
+</div>

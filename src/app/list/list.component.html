@@ -1,0 +1,26 @@
+<div class="container">
+    <h2 class="text-success">List Component</h2>
+    <br>
+    <table class="table">
+        <thead>
+            <tr>
+                <td><b>Id</b></td>
+                <td><b>Name</b></td>
+                <td><b>Location</b></td>
+                <td><b>Options</b></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let dept of deptdata">
+                <td>{{dept.id}}</td>                
+                <td>{{dept.name}}</td>                
+                <td>{{dept.loc}}</td>
+                <td>
+                    <a [routerLink]="['/find/',dept.id]">Details</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a [routerLink]="['/edit/',dept.id]">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a [routerLink]="['/delete/',dept.id]">Delete</a>&nbsp;&nbsp;&nbsp;
+                </td>                
+            </tr>
+        </tbody>
+    </table>
+</div>

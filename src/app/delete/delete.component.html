@@ -1,0 +1,30 @@
+<body class="container jumbotron">
+
+    <h2>Delete Component</h2>
+    <hr>
+    <form (ngSubmit)="removeDept(deptdata)" #deptForm="ngForm">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td><b>Id</b></td>
+                    <td><b>Name</b></td>
+                    <td><b>Location</b></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{deptdata.id}}</td>                
+                    <td>{{deptdata.name}}</td>                
+                    <td>{{deptdata.loc}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>
+            <input type="submit" value="Confirm Delete?" class="btn btn-success">
+            &nbsp;&nbsp;<button class="btn btn-info" [routerLink]="['/list']">No</button>
+        </p>
+    </form>
+    <!-- <br><br> -->
+    <!-- <a [routerLink]="['/list']">Back to List</a> -->
+</body>
